@@ -1,5 +1,4 @@
 from dependency_injector import containers, providers
-
 from data.datasource.TracingDataBase import TracingDataBase
 from data.repository.TracingRepository import TracingRepository
 from domain.usecases.AddTraceUseCase import AddTraceUseCase
