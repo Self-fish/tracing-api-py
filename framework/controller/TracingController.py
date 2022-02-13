@@ -21,4 +21,3 @@ class TracingController(Resource):
         trace = Trace(TraceType[body["type"]], body["id"], body["starting"], body["finishing"])
         self.__add_trace_use_case.add_trace(trace)
         return request.json
-
