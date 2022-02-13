@@ -1,4 +1,6 @@
-from flask import request
+import json
+
+from flask import request, jsonify
 from flask_restful import Resource
 from dependency_injector.wiring import inject, Provide
 
@@ -18,4 +20,5 @@ class TracingController(Resource):
         body = request.json
         trace = Trace(TraceType[body["type"]], body["id"], body["starting"], body["finishing"])
         self.__add_trace_use_case.add_trace(trace)
+        return request.json
 

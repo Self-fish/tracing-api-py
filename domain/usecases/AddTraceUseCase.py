@@ -8,4 +8,4 @@ class AddTraceUseCase:
         self.__repository = repository
 
     def add_trace(self, trace: Trace):
-        self.__repository.add_trace(trace)
+        return self.__repository.add_trace(trace)
