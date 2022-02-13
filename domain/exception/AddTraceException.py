@@ -1,0 +1,4 @@
+
+
+class AddTraceException(Exception):
+    pass

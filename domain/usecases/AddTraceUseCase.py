@@ -1,4 +1,5 @@
 from data.repository.TracingRepository import TracingRepository
+from domain.exception.AddTraceException import AddTraceException
 from domain.model.Trace import Trace
 
 

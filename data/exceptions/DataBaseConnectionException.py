@@ -1,0 +1,4 @@
+
+
+class DataBaseConnectionException(Exception):
+    pass
