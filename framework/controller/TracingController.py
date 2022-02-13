@@ -4,6 +4,7 @@ from dependency_injector.wiring import inject, Provide
 from TracingApiContainer import TracingApiContainer
 from domain.exception.AddTraceException import AddTraceException
 from domain.model.Trace import Trace
+from domain.model.TraceAction import TraceAction
 from domain.model.TraceType import TraceType
 from domain.usecases.AddTraceUseCase import AddTraceUseCase
 
@@ -17,7 +18,7 @@ class TracingController(Resource):
     def post(self):
         try:
             body = request.json
-            trace = Trace(TraceType[body["type"]], body["id"], body["starting"], body["finishing"])
+            trace = Trace(TraceType[body["type"]], body["id"], TraceAction[body["action"]], body["time"])
             self.__add_trace_use_case.add_trace(trace)
             return request.json
         except AddTraceException as e:

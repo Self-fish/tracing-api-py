@@ -9,7 +9,8 @@ class TracingDataBase:
         try:
             data_base = DataBaseController.get_database()
             collection = data_base["traces"]
-            trace_dict = {"type": trace.type.name, "id": trace.id, "starting": trace.starting, "finishing": trace.finishing}
+            trace_dict = {"type": trace.type.name, "id": trace.id, "action": trace.action.name,
+                          "time": trace.time}
             return collection.insert_one(trace_dict)
         except Exception as e:
             raise DataBaseConnectionException(e)
